@@ -1,6 +1,6 @@
 package com.chenmq.excel.testbean;
 
-import com.chenmq.excel.annotation.ExcelShell;
+import com.github.mcin123.excel.annotation.ExcelShell;
 import lombok.Data;
 
 import java.util.Date;

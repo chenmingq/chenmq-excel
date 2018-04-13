@@ -1,4 +1,4 @@
-package com.chenmq.excel.utils;
+package com.github.mcin123.excel.utils;
 
 import org.apache.poi.ss.usermodel.Workbook;
 

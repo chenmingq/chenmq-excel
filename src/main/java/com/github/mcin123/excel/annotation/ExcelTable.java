@@ -1,4 +1,4 @@
-package com.chenmq.excel.annotation;
+package com.github.mcin123.excel.annotation;
 
 /**
  * @author chenmq

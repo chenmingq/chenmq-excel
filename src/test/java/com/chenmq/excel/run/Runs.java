@@ -1,9 +1,9 @@
 package com.chenmq.excel.run;
 
 
-import com.chenmq.excel.filter.ExcelException;
-import com.chenmq.excel.poi.ExportExcel;
-import com.chenmq.excel.poi.ImportExcel;
+import com.github.mcin123.excel.filter.ExcelException;
+import com.github.mcin123.excel.poi.ExportExcel;
+import com.github.mcin123.excel.poi.ImportExcel;
 import com.chenmq.excel.testbean.ExcelBean;
 import org.junit.Test;
 
@@ -45,7 +45,6 @@ public class Runs {
 
     @Test
     public void importExcelTest (){
-//        List<?> list = ImportExcel.importExcelToObject(ExcelTestBean.class,new File("excel.xls"));
         List<?> list = ImportExcel.importExcelToObject(ExcelBean.class,"chenmq-excel.xls");
         System.out.println(list);
         for (int i = 0; i < list.size(); i++) {

@@ -1,4 +1,4 @@
-package com.chenmq.excel.annotation;
+package com.github.mcin123.excel.annotation;
 
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
