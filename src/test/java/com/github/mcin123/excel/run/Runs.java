@@ -1,10 +1,10 @@
-package com.chenmq.excel.run;
+package com.github.mcin123.excel.run;
 
 
 import com.github.mcin123.excel.filter.ExcelException;
 import com.github.mcin123.excel.poi.ExportExcel;
 import com.github.mcin123.excel.poi.ImportExcel;
-import com.chenmq.excel.testbean.ExcelBean;
+import com.github.mcin123.excel.testbean.ExcelBean;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -17,7 +17,7 @@ import java.util.List;
  * @version V1.0
  * @ProjectName: chenmq-excel
  * @Package com.chenmq.excel.run
- * @Description: TODO
+ * @Description: 测试
  * @date 2018-04-10 上午1:01
  */
 

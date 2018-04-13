@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @Auth chenmq
+ * @author chenmq
  */
 
 public class DateUtil {
@@ -14,7 +14,7 @@ public class DateUtil {
     /**
      * 格式化日期
      *
-     * @return
+     * @return Date时间
      */
     public static Date fomatDate(String date,String simpleDateFormat) {
         DateFormat fmt = new SimpleDateFormat(simpleDateFormat);

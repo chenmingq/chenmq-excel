@@ -17,10 +17,10 @@ import java.util.List;
 /**
  * @author chenmq
  * @version V1.0
- * @ProjectName: chenmq-excel
- * @Package com.chenmq.excel.poi
- * @Description: 表格创建
- * @date 2018-04-08 下午7:29
+ * ProjectName: chenmq-excel
+ * Package com.github.mcin123.excel.poi
+ * Description: 表格创建
+ * date 2018-04-08 下午7:29
  */
 
 public class ExportExcel {
@@ -71,8 +71,7 @@ public class ExportExcel {
     /**
      * 导出字节类型
      * @param sheetList 数据列表
-     * @return
-     * @throws ExcelException
+     * @throws ExcelException ExcelException
      */
     public static byte[] exportToBytes(List<?>... sheetList) throws ExcelException{
         Workbook workbook = initWorkBook(sheetList);
@@ -94,7 +93,7 @@ public class ExportExcel {
 
     /**
      * 初始化表格信息
-     * @param sheelDataArr
+     * @param sheelDataArr List<?>...
      */
     private static Workbook initWorkBook (List<?>... sheelDataArr){
 

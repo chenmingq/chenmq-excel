@@ -10,18 +10,18 @@ import java.io.OutputStream;
 /**
  * @author chenmq
  * @version V1.0
- * @ProjectName: chenmq-excel
- * @Package com.chenmq.excel.utils
- * @Description: TODO
- * @date 2018-04-10 上午12:58
+ * ProjectName: chenmq-excel
+ * Package com.github.mcin123.excel.utils
+ * Description: io流操作
+ * date 2018-04-10 上午12:58
  */
 
 public class IoOptionUtils {
     
     /**
      * 写文件
-     * @param workbook
-     * @param outputStream
+     * @param workbook Workbook
+     * @param outputStream OutputStream
      */
     public static void writeWorkbook (Workbook workbook, OutputStream outputStream){
         try {
@@ -36,7 +36,7 @@ public class IoOptionUtils {
 
     /**
      * 关闭Workbook
-     * @param workbook
+     * @param workbook Workbook
      */
     public static void closeWorkbook (Workbook workbook){
         if (null != workbook) {
@@ -50,7 +50,7 @@ public class IoOptionUtils {
 
     /**
      * 关闭OutputStream
-     * @param outputStream
+     * @param outputStream OutputStream
      */
     public static void closeOutputStream (OutputStream outputStream) {
         if (null != outputStream) {
@@ -65,7 +65,7 @@ public class IoOptionUtils {
 
     /**
      * 关闭InputStream
-     * @param inputStream
+     * @param inputStream InputStream
      */
     public static void closeInputStream (InputStream inputStream) {
         if (null != inputStream) {
@@ -79,7 +79,7 @@ public class IoOptionUtils {
 
     /**
      * 关闭ByteArrayOutputStream
-     * @param byteArrayOutputStream
+     * @param byteArrayOutputStream ByteArrayOutputStream
      */
     public static void closeByteArrayOutputStream (ByteArrayOutputStream byteArrayOutputStream){
         if (null != byteArrayOutputStream) {

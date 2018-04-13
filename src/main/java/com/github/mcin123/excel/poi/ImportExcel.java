@@ -15,10 +15,10 @@ import java.util.*;
 /**
  * @author chenmq
  * @version V1.0
- * @ProjectName: chenmq-excel
- * @Package com.chenmq.excel.poi
- * @Description: TODO
- * @date 2018-04-10 上午1:00
+ * ProjectName: chenmq-excel
+ * Package com.github.mcin123.excel.poi
+ * Description: 导入excel
+ * date 2018-04-10 上午1:00
  */
 
 public class ImportExcel {
@@ -26,8 +26,8 @@ public class ImportExcel {
 
     /**
      * file写入
-     * @param excelFilePath
-     * @return
+     * @param excelFilePath File
+     * @return 表格数据位置和数据
      */
     private static List<Map<Integer,String>> readInputFile (File excelFilePath){
         List<Map<Integer,String>> list = new ArrayList<Map<Integer,String>>();
@@ -42,8 +42,8 @@ public class ImportExcel {
 
     /**
      * 文件路径写入
-     * @param excelNamePath
-     * @return
+     * @param excelNamePath String
+     * @return 表格数据位置和数据
      */
     private static  List<Map<Integer,String>> readInputName (String excelNamePath){
         List<Map<Integer,String>> list = new ArrayList<Map<Integer,String>>();
@@ -59,8 +59,8 @@ public class ImportExcel {
 
     /**
      * InputStream 初始化写入表格
-     * @param inp
-     * @return
+     * @param inp InputStream
+     * @return 表格数据位置和数据
      */
     private static List<Map<Integer,String>> inStream (InputStream inp){
 
@@ -104,9 +104,9 @@ public class ImportExcel {
 
     /**
      * 文件路径名称 excel 转 Object 对象
-     * @param clazz
-     * @param filePathName
-     * @return
+     * @param clazz Class
+     * @param filePathName String
+     * @return 返回Java对象
      */
     public static List<?> importExcelToObject (Class<?> clazz,String filePathName){
         List<Map<Integer,String>> list = readInputName(filePathName);
@@ -115,9 +115,9 @@ public class ImportExcel {
 
     /**
      * file excel 转 Object 对象
-     * @param clazz
-     * @param file
-     * @return
+     * @param clazz Class
+     * @param file File
+     * @return 返回List数组对象
      */
     public static List<?> importExcelToObject (Class<?> clazz,File file){
         List<Map<Integer,String>> list = readInputFile(file);
@@ -126,9 +126,9 @@ public class ImportExcel {
 
     /**
      * 初始化转换的对象
-     * @param clazz
-     * @param list
-     * @return
+     * @param clazz Class
+     * @param list List<Map<Integer,String>>
+     * @return 返回List数组对象
      */
     private static List<?> initBean (Class<?> clazz,List<Map<Integer,String>> list){
 

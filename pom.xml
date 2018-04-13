@@ -19,6 +19,35 @@
         <servlet.version>4.0.0</servlet.version>
     </properties>
 
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <!--写你自己的，这只是个例子-->
+    <scm>
+        <url>https://github.com/mcin123/chenmq-excel</url>
+        <connection>https://github.com/mcin123/chenmq-excel.git</connection>
+        <developerConnection>https://github.com/mcin123/chenmq-excel</developerConnection>
+    </scm>
+
+    <!--写你自己的，这只是个例子-->
+    <developers>
+        <developer>
+            <name>chenmq</name>
+            <email>1450291172@qq.com</email>
+            <url>https://github.com/mcin123/chenmq-excel</url>
+        </developer>
+    </developers>
+
     <dependencies>
 
         <!-- poi -->

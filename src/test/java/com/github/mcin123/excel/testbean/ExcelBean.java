@@ -1,4 +1,4 @@
-package com.chenmq.excel.testbean;
+package com.github.mcin123.excel.testbean;
 
 import com.github.mcin123.excel.annotation.ExcelShell;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
@@ -11,8 +11,8 @@ import java.util.Date;
  * @author chenmq
  * @version V1.0
  * @ProjectName: chenmq-excel
- * @Package com.chenmq.excel.testbean
- * @Description: TODO
+ * @Package com.github.mcin123.excel.testbean
+ * @Description: excel待转化对象
  * @date 2018-04-13 上午12:36
  */
 

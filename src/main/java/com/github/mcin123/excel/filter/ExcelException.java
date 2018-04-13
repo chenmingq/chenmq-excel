@@ -3,10 +3,10 @@ package com.github.mcin123.excel.filter;
 /**
  * @author chenmq
  * @version V1.0
- * @ProjectName: chenmq-excel
- * @Package com.chenmq.excel.filter
- * @Description: TODO
- * @date 2018-04-09 上午12:47
+ * ProjectName: chenmq-excel
+ * Package com.github.mcin123.excel.filter
+ * Description: 自定义异常
+ * date 2018-04-09 上午12:47
  */
 
 public class ExcelException extends Exception {
