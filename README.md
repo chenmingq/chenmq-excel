@@ -8,9 +8,9 @@
 - [中文文档](http://doc.excel.chenmq.com)
 
 # 产品特色
-- 1. 编写对象通过 @ExcelSheet注解来定义表格字段,表格位置,字体类型,字体大小,字体颜色
-- 2. Excel导出: 支持多对象使用多sheet导出,HttpServletResponse导出下载,文件路径导出到磁盘,byte数组导出
-- 3. Excel导入: 支持文件路径导入,File导入
+- 1.编写对象通过 @ExcelSheet注解来定义表格字段,表格位置,字体类型,字体大小,字体颜色
+- 2.Excel导出: 支持多对象使用多sheet导出,HttpServletResponse导出下载,文件路径导出到磁盘,byte数组导出
+- 3.Excel导入: 支持文件路径导入,File导入
 
 # 引入Maven
 ```xml
