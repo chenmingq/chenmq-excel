@@ -1,10 +1,10 @@
-package com.github.mcin123.excel.annotation;
+package com.github.chenmingq.excel.annotation;
 
 /**
  * @author chenmq
  * @version V1.0
  * ProjectName: chenmq-excel
- * Package com.github.mcin123.excel.annotation
+ * Package com.github.chenmingq.excel.annotation
  * Description: 表格类型等信息注解
  * date 2018-04-13 上午1:22
  */

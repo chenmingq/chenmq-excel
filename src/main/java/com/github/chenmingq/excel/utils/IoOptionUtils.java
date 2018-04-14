@@ -1,4 +1,4 @@
-package com.github.mcin123.excel.utils;
+package com.github.chenmingq.excel.utils;
 
 import org.apache.poi.ss.usermodel.Workbook;
 
@@ -11,7 +11,7 @@ import java.io.OutputStream;
  * @author chenmq
  * @version V1.0
  * ProjectName: chenmq-excel
- * Package com.github.mcin123.excel.utils
+ * Package com.github.chenmingq.excel.utils
  * Description: io流操作
  * date 2018-04-10 上午12:58
  */

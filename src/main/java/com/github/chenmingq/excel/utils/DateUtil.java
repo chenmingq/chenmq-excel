@@ -1,4 +1,4 @@
-package com.github.mcin123.excel.utils;
+package com.github.chenmingq.excel.utils;
 
 import java.text.DateFormat;
 import java.text.ParseException;

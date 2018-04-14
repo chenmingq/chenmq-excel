@@ -1,8 +1,8 @@
-package com.github.mcin123.excel.poi;
+package com.github.chenmingq.excel.poi;
 
-import com.github.mcin123.excel.annotation.ExcelSheet;
-import com.github.mcin123.excel.utils.DateUtil;
-import com.github.mcin123.excel.utils.IoOptionUtils;
+import com.github.chenmingq.excel.utils.IoOptionUtils;
+import com.github.chenmingq.excel.annotation.ExcelSheet;
+import com.github.chenmingq.excel.utils.DateUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.*;
@@ -16,7 +16,7 @@ import java.util.*;
  * @author chenmq
  * @version V1.0
  * ProjectName: chenmq-excel
- * Package com.github.mcin123.excel.poi
+ * Package com.github.chenmingq.excel.poi
  * Description: 导入excel
  * date 2018-04-10 上午1:00
  */

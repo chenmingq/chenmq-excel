@@ -1,10 +1,10 @@
-package com.github.mcin123.excel.filter;
+package com.github.chenmingq.excel.filter;
 
 /**
  * @author chenmq
  * @version V1.0
  * ProjectName: chenmq-excel
- * Package com.github.mcin123.excel.filter
+ * Package com.github.chenmingq.excel.filter
  * Description: 自定义异常
  * date 2018-04-09 上午12:47
  */

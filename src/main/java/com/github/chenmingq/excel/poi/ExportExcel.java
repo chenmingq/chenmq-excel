@@ -1,8 +1,8 @@
-package com.github.mcin123.excel.poi;
+package com.github.chenmingq.excel.poi;
 
-import com.github.mcin123.excel.filter.ExcelException;
-import com.github.mcin123.excel.annotation.ExcelSheet;
-import com.github.mcin123.excel.utils.IoOptionUtils;
+import com.github.chenmingq.excel.annotation.ExcelSheet;
+import com.github.chenmingq.excel.filter.ExcelException;
+import com.github.chenmingq.excel.utils.IoOptionUtils;
 import org.apache.poi.common.usermodel.HyperlinkType;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
@@ -18,7 +18,7 @@ import java.util.List;
  * @author chenmq
  * @version V1.0
  * ProjectName: chenmq-excel
- * Package com.github.mcin123.excel.poi
+ * Package com.github.chenmingq.excel.poi
  * Description: 表格创建
  * date 2018-04-08 下午7:29
  */

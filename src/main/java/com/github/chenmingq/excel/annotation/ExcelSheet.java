@@ -1,4 +1,4 @@
-package com.github.mcin123.excel.annotation;
+package com.github.chenmingq.excel.annotation;
 
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
@@ -13,7 +13,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * @author chenmq
  * @version V1.0
  * ProjectName: chenmq-excel
- * Package com.github.mcin123.excel.annotation
+ * Package com.github.chenmingq.excel.annotation
  * Description: 单元格信息
  * date 2018-04-08 下午7:23
  */
