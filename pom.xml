@@ -34,9 +34,9 @@
 
     <!--写你自己的，这只是个例子-->
     <scm>
-        <url>https://github.com/mcin123/chenmq-excel</url>
-        <connection>https://github.com/mcin123/chenmq-excel.git</connection>
-        <developerConnection>https://github.com/mcin123/chenmq-excel</developerConnection>
+        <url>https://github.com/chenmingq/chenmq-excel</url>
+        <connection>https://github.com/chenmingq/chenmq-excel.git</connection>
+        <developerConnection>https://github.com/chenmingq/chenmq-excel</developerConnection>
     </scm>
 
     <!--写你自己的，这只是个例子-->
@@ -44,7 +44,7 @@
         <developer>
             <name>chenmq</name>
             <email>1450291172@qq.com</email>
-            <url>https://github.com/mcin123/chenmq-excel</url>
+            <url>https://github.com/chenmingq/chenmq-excel</url>
         </developer>
     </developers>
 
