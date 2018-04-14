@@ -12,7 +12,7 @@ package com.github.mcin123.excel.annotation;
 public @interface ExcelTable {
 
     /**
-     * excel类型 (2003[xls] || 2007[xlsx])
+     * excel类型 (xls || xlsx)
      */
     String excelType () default "xls";
 
@@ -24,7 +24,7 @@ public @interface ExcelTable {
     /**
      * 标题字体颜色
      */
-    String titFontColor () default "";
+    String titeFontColor () default "";
 
     /**
      * 标题字体大小
