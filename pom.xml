@@ -19,7 +19,6 @@
         <servlet.version>4.0.0</servlet.version>
     </properties>
 
-    <!-- 发布到私服 -->
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
@@ -33,14 +32,12 @@
         </license>
     </licenses>
 
-    <!-- 项目信息 -->
     <scm>
         <url>https://github.com/chenmingq/chenmq-excel</url>
         <connection>https://github.com/chenmingq/chenmq-excel.git</connection>
         <developerConnection>https://github.com/chenmingq/chenmq-excel</developerConnection>
     </scm>
 
-    <!-- 开发者信息 -->
     <developers>
         <developer>
             <name>chenmq</name>
@@ -119,7 +116,6 @@
     <build>
         <plugins>
 
-            <!--使用Maven Release Plugin执行发布部署-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
@@ -131,10 +127,6 @@
                     <goals>deploy</goals>
                 </configuration>
             </plugin>
-            <!--
-设置当前版本 mvn versions:set -DnewVersion=1.0.0
-
-            -->
         </plugins>
     </build>
 
