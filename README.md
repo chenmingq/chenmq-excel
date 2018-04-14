@@ -15,8 +15,8 @@
 # 引入Maven
 ```xml
 <dependency>
-    <groupId>com.github.mcin123</groupId>
-    <artifactId>chenmq-excel</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+  <groupId>com.github.mcin123.excel</groupId>
+  <artifactId>chenmq-excel</artifactId>
+  <version>1.0.1-SNAPSHOT</version>
 </dependency>
 ```
