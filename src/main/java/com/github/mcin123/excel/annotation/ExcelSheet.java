@@ -23,7 +23,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 @Target({FIELD,ElementType.TYPE, ElementType.METHOD})
 @Retention(RUNTIME)
-public @interface ExcelShell {
+public @interface ExcelSheet {
 
     /**
      * 表格字段名称

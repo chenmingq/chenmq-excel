@@ -1,6 +1,6 @@
 package com.github.mcin123.excel.testbean;
 
-import com.github.mcin123.excel.annotation.ExcelShell;
+import com.github.mcin123.excel.annotation.ExcelSheet;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 
@@ -18,25 +18,25 @@ import java.util.Date;
 
 public class ExcelBean {
 
-    @ExcelShell(cellName = "创建时间",sheetPosition = 0,dateFormat = "yyyy-MM-dd HH:mm:ss")
+    @ExcelSheet(cellName = "创建时间",sheetPosition = 0,dateFormat = "yyyy-MM-dd HH:mm:ss")
     private Date createDate;
 
-    @ExcelShell(cellName = "字符串",sheetPosition = 1,isStrikeout = true,fontSize = 24 )
+    @ExcelSheet(cellName = "字符串",sheetPosition = 1,isStrikeout = true,fontSize = 24 )
     private String str;
 
-    @ExcelShell(cellName = "字符串url链接",sheetPosition = 2,isStrikeout = true)
+    @ExcelSheet(cellName = "字符串url链接",sheetPosition = 2,isStrikeout = true)
     private String link;
 
-    @ExcelShell(cellName = "boolean类型",sheetPosition = 3,horizontalAlignment= HorizontalAlignment.LEFT)
+    @ExcelSheet(cellName = "boolean类型",sheetPosition = 3,horizontalAlignment= HorizontalAlignment.LEFT)
     private boolean flage;
 
-    @ExcelShell(cellName = "BigDecimal类型",sheetPosition = 4,verticalAlignment = VerticalAlignment.BOTTOM)
+    @ExcelSheet(cellName = "BigDecimal类型",sheetPosition = 4,verticalAlignment = VerticalAlignment.BOTTOM)
     private BigDecimal money;
 
-    @ExcelShell(cellName = "Integer类型",sheetPosition = 5,isItalic = true)
+    @ExcelSheet(cellName = "Integer类型",sheetPosition = 5,isItalic = true)
     private Integer ints;
 
-    @ExcelShell(cellName = "Double类型",sheetPosition = 6,fontName = "Airal")
+    @ExcelSheet(cellName = "Double类型",sheetPosition = 6,fontName = "Airal")
     private double sources;
 
     public Date getCreateDate() {

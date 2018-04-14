@@ -1,7 +1,7 @@
 package com.github.mcin123.excel.poi;
 
 import com.github.mcin123.excel.filter.ExcelException;
-import com.github.mcin123.excel.annotation.ExcelShell;
+import com.github.mcin123.excel.annotation.ExcelSheet;
 import com.github.mcin123.excel.utils.IoOptionUtils;
 import org.apache.poi.common.usermodel.HyperlinkType;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -114,11 +114,11 @@ public class ExportExcel {
             CellStyle cellStyleTitle = wb.createCellStyle();
 
             for (Field f : fields) {
-                ExcelShell excelShell = f.getAnnotation(ExcelShell.class);
-                Cell cell = row.createCell(excelShell.sheetPosition());
-                cell.setCellValue(excelShell.cellName());
-                cellStyleTitle.setAlignment(excelShell.horizontalAlignment());
-                cellStyleTitle.setVerticalAlignment(excelShell.verticalAlignment());
+                ExcelSheet excelSheet = f.getAnnotation(ExcelSheet.class);
+                Cell cell = row.createCell(excelSheet.sheetPosition());
+                cell.setCellValue(excelSheet.cellName());
+                cellStyleTitle.setAlignment(excelSheet.horizontalAlignment());
+                cellStyleTitle.setVerticalAlignment(excelSheet.verticalAlignment());
                 cell.setCellStyle(cellStyleTitle);
             }
 
@@ -129,28 +129,28 @@ public class ExportExcel {
                 row1 = sheet.createRow(i+1);
                 for (Field f : fields) {
 
-                    ExcelShell excelShell = f.getAnnotation(ExcelShell.class);
+                    ExcelSheet excelSheet = f.getAnnotation(ExcelSheet.class);
                     f.setAccessible(true);
 
                     try {
                         if (null != f.get(list.get(i))) {
 
-                            Cell cell = row1.createCell(excelShell.sheetPosition());
+                            Cell cell = row1.createCell(excelSheet.sheetPosition());
 
                             CellStyle cellStyle = wb.createCellStyle();
 
                             Font font = wb.createFont();
-                            font.setFontHeightInPoints(excelShell.fontSize());
-                            font.setFontName(excelShell.fontName());
-                            font.setItalic(excelShell.isItalic());
-                            font.setStrikeout(excelShell.isStrikeout());
+                            font.setFontHeightInPoints(excelSheet.fontSize());
+                            font.setFontName(excelSheet.fontName());
+                            font.setItalic(excelSheet.isItalic());
+                            font.setStrikeout(excelSheet.isStrikeout());
                             cellStyle.setFont(font);
 
                             if (f.get(list.get(i)).getClass() == Date.class) {
 
                                 cell.setCellValue((Date) f.get(list.get(i)));
                                 cellStyle.setDataFormat(
-                                        createHelper.createDataFormat().getFormat(excelShell.dateFormat()));
+                                        createHelper.createDataFormat().getFormat(excelSheet.dateFormat()));
 
                             } else if (String.valueOf(f.get(list.get(i))).startsWith("http")){
 
@@ -165,8 +165,8 @@ public class ExportExcel {
                                 cell.setCellValue(f.get(list.get(i)).toString());
                             }
 
-                            cellStyle.setAlignment(excelShell.horizontalAlignment());
-                            cellStyle.setVerticalAlignment(excelShell.verticalAlignment());
+                            cellStyle.setAlignment(excelSheet.horizontalAlignment());
+                            cellStyle.setVerticalAlignment(excelSheet.verticalAlignment());
                             cell.setCellStyle(cellStyle);
                         }
 

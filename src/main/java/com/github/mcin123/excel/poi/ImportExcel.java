@@ -1,6 +1,6 @@
 package com.github.mcin123.excel.poi;
 
-import com.github.mcin123.excel.annotation.ExcelShell;
+import com.github.mcin123.excel.annotation.ExcelSheet;
 import com.github.mcin123.excel.utils.DateUtil;
 import com.github.mcin123.excel.utils.IoOptionUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -150,14 +150,14 @@ public class ImportExcel {
 
             for (Field field: fields) {
                 field.setAccessible(true);
-                ExcelShell excelShell = field.getAnnotation(ExcelShell.class);
+                ExcelSheet excelSheet = field.getAnnotation(ExcelSheet.class);
                 try {
-                    Object objValue = map.get(excelShell.sheetPosition());
+                    Object objValue = map.get(excelSheet.sheetPosition());
 
                     String simpleName = field.getType().getSimpleName();
 
                     if ("Date".equals(simpleName)) {
-                        field.set(obj,objValue !=null?DateUtil.fomatDate(objValue.toString(),excelShell.dateFormat()):null);
+                        field.set(obj,objValue !=null?DateUtil.fomatDate(objValue.toString(), excelSheet.dateFormat()):null);
                     } else if ("Integer".equalsIgnoreCase(simpleName)) {
                         field.set(obj,null!=objValue?Integer.parseInt(objValue.toString()):null);
                     } else if ("boolean".equalsIgnoreCase(simpleName)) {
