@@ -1,11 +1,11 @@
 package com.github.chenmingq.excel.annotation;
 
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 
 import java.lang.annotation.*;
 
-import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 
@@ -21,7 +21,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Inherited
 @Documented
-@Target({FIELD,ElementType.TYPE, ElementType.METHOD})
+@Target(ElementType.FIELD)
 @Retention(RUNTIME)
 public @interface ExcelSheet {
 
@@ -43,7 +43,7 @@ public @interface ExcelSheet {
     /**
      * 字体名称
      */
-    String fontName() default "Courier New";
+    String fontName() default "";
 
     /**
      * 字体大小
@@ -69,4 +69,14 @@ public @interface ExcelSheet {
      * 垂直排列方式
      */
     VerticalAlignment verticalAlignment() default VerticalAlignment.CENTER;
+
+    /**
+     * 背景颜色
+     */
+    IndexedColors fontBackgroundColor () default IndexedColors.WHITE ;
+
+    /**
+     * 字体颜色
+     */
+    IndexedColors fontColor () default IndexedColors.BLACK ;
 }

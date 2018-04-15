@@ -1,8 +1,10 @@
 package com.github.chenmingq.excel.poi;
 
 import com.github.chenmingq.excel.annotation.ExcelSheet;
+import com.github.chenmingq.excel.annotation.ExcelTable;
 import com.github.chenmingq.excel.filter.ExcelException;
 import com.github.chenmingq.excel.utils.IoOptionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.common.usermodel.HyperlinkType;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
@@ -93,33 +95,58 @@ public class ExportExcel {
 
     /**
      * 初始化表格信息
-     * @param sheelDataArr List<?>...
+     * @param sheetDataArr List<?>...
      */
-    private static Workbook initWorkBook (List<?>... sheelDataArr){
+    private static Workbook initWorkBook (List<?>... sheetDataArr){
 
         // HSSFWorkbook == 2007/xlsx || XSSFWorkbook == 2003/xls
         Workbook wb = new HSSFWorkbook();
 
-        for (List<?> list:sheelDataArr) {
+        for (List<?> list:sheetDataArr) {
 
-            Class clazz = list.get(0).getClass();
+            Class<?> clazz = list.get(0).getClass();
 
-            String sheetName = clazz.getSimpleName();
+
+            CellStyle cellStyleTitle = wb.createCellStyle();
+            ExcelTable excelTable = clazz.getAnnotation(ExcelTable.class);
+            String sheetName = "";
+            if (null!= excelTable) {
+                sheetName = excelTable.sheetName();
+                if (StringUtils.isBlank(sheetName)) {
+                    sheetName = clazz.getSimpleName();
+                }
+                Font font = wb.createFont();
+                font.setFontHeightInPoints(excelTable.titleFontSize());
+                font.setFontName(excelTable.titleFontName());
+                font.setColor(excelTable.titleFontColor().getIndex());
+                cellStyleTitle.setFont(font);
+
+                if (!excelTable.titleBackgroundColor().equals(IndexedColors.WHITE)) {
+                    short indexedColors = excelTable.titleBackgroundColor().getIndex();
+                    cellStyleTitle.setFillForegroundColor(indexedColors);
+                    cellStyleTitle.setFillBackgroundColor(indexedColors);
+                    cellStyleTitle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+                }
+
+            } else {
+                sheetName = clazz.getSimpleName();
+            }
+
 
             Sheet sheet = wb.createSheet(sheetName);
 
             // 设置表头
             Field[] fields = clazz.getDeclaredFields();
             Row row = sheet.createRow(0);
-            CellStyle cellStyleTitle = wb.createCellStyle();
 
+            Cell titleCell = null;
             for (Field f : fields) {
                 ExcelSheet excelSheet = f.getAnnotation(ExcelSheet.class);
-                Cell cell = row.createCell(excelSheet.sheetPosition());
-                cell.setCellValue(excelSheet.cellName());
+                titleCell = row.createCell(excelSheet.sheetPosition());
+                titleCell.setCellValue(excelSheet.cellName());
                 cellStyleTitle.setAlignment(excelSheet.horizontalAlignment());
                 cellStyleTitle.setVerticalAlignment(excelSheet.verticalAlignment());
-                cell.setCellStyle(cellStyleTitle);
+                titleCell.setCellStyle(cellStyleTitle);
             }
 
             Row row1 = null;
@@ -146,6 +173,10 @@ public class ExportExcel {
                             font.setStrikeout(excelSheet.isStrikeout());
                             cellStyle.setFont(font);
 
+                            if (!excelSheet.fontColor().equals(IndexedColors.BLACK)) {
+                                font.setColor(excelSheet.fontColor().getIndex());
+                            }
+
                             if (f.get(list.get(i)).getClass() == Date.class) {
 
                                 cell.setCellValue((Date) f.get(list.get(i)));
@@ -154,7 +185,7 @@ public class ExportExcel {
 
                             } else if (String.valueOf(f.get(list.get(i))).startsWith("http")){
 
-                                font.setUnderline(Font.U_SINGLE);
+                                /*font.setUnderline(Font.U_SINGLE);*/
                                 font.setColor(IndexedColors.BLUE.getIndex());
                                 cell.setCellValue(String.valueOf(f.get(list.get(i))));
                                 Hyperlink link = createHelper.createHyperlink(HyperlinkType.URL);
@@ -167,6 +198,15 @@ public class ExportExcel {
 
                             cellStyle.setAlignment(excelSheet.horizontalAlignment());
                             cellStyle.setVerticalAlignment(excelSheet.verticalAlignment());
+
+                            if (!excelSheet.fontBackgroundColor().equals(IndexedColors.WHITE)) {
+                                short indexedColors = excelSheet.fontBackgroundColor().getIndex();
+                                cellStyle.setFillForegroundColor(indexedColors);
+                                cellStyle.setFillBackgroundColor(indexedColors);
+                                cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+                            }
+
+
                             cell.setCellStyle(cellStyle);
                         }
 

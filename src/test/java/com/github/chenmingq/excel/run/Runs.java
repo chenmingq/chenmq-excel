@@ -7,6 +7,7 @@ import com.github.chenmingq.excel.poi.ImportExcel;
 import com.github.chenmingq.excel.testbean.ExcelBean;
 import org.junit.Test;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,7 +46,7 @@ public class Runs {
 
     @Test
     public void importExcelTest (){
-        List<?> list = ImportExcel.importExcelToObject(ExcelBean.class,"chenmq-excel.xls");
+        List<?> list = ImportExcel.importExcelToObject(ExcelBean.class,new File("chenmq-excel.xls"));
         System.out.println(list);
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));

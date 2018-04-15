@@ -1,7 +1,9 @@
 package com.github.chenmingq.excel.testbean;
 
 import com.github.chenmingq.excel.annotation.ExcelSheet;
+import com.github.chenmingq.excel.annotation.ExcelTable;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 
 import java.math.BigDecimal;
@@ -10,15 +12,17 @@ import java.util.Date;
 /**
  * @author chenmq
  * @version V1.0
- * @ProjectName: chenmq-excel
- * @Package com.github.chenmingq.excel.testbean
- * @Description: excel待转化对象
+ * ProjectName: chenmq-excel
+ * Package com.github.chenmingq.excel.testbean
+ * Description: excel待转化对象
  * @date 2018-04-13 上午12:36
  */
 
+@ExcelTable(sheetName="excelName",titleFontColor = IndexedColors.BLUE,
+        titleBackgroundColor = IndexedColors.YELLOW,titleFontName = "Tlwg typo",titleFontSize = 20)
 public class ExcelBean {
 
-    @ExcelSheet(cellName = "创建时间",sheetPosition = 0,dateFormat = "yyyy-MM-dd HH:mm:ss")
+    @ExcelSheet(cellName = "创建时间",sheetPosition = 0,dateFormat = "yyyy-MM-dd HH:mm:ss",fontBackgroundColor = IndexedColors.BLUE)
     private Date createDate;
 
     @ExcelSheet(cellName = "字符串",sheetPosition = 1,isStrikeout = true,fontSize = 24 )
@@ -36,7 +40,7 @@ public class ExcelBean {
     @ExcelSheet(cellName = "Integer类型",sheetPosition = 5,isItalic = true)
     private Integer ints;
 
-    @ExcelSheet(cellName = "Double类型",sheetPosition = 6,fontName = "Airal")
+    @ExcelSheet(cellName = "Double类型",sheetPosition = 6,fontName = "Airal",fontColor = IndexedColors.YELLOW)
     private double sources;
 
     public Date getCreateDate() {

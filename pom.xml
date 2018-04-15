@@ -12,11 +12,9 @@
         <java.version>1.7</java.version>
         <poi.version>3.17</poi.version>
         <junit.version>4.12</junit.version>
-        <fastjson.version>1.2.47</fastjson.version>
-        <slf4j.version>1.7.25</slf4j.version>
-        <lombok.version>1.16.20</lombok.version>
         <commons-lang.version>3.7</commons-lang.version>
         <servlet.version>4.0.0</servlet.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     </properties>
 
     <parent>
@@ -68,34 +66,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- fastjson -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
-
-        <!-- slf4j -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!--lombok-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
         <!-- commons-lang -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -119,7 +89,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
+                <version>${maven-release-plugin.version}</version>
                 <configuration>
                     <autoVersionSubmodules>false</autoVersionSubmodules>
                     <useReleaseProfile>false</useReleaseProfile>
