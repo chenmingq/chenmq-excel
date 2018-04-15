@@ -14,9 +14,10 @@
 
 # 引入Maven
 ```xml
+<!-- https://mvnrepository.com/artifact/com.github.chenmingq/chenmq-excel -->
 <dependency>
-  <groupId>com.github.chenmingq</groupId>
-  <artifactId>chenmq-excel</artifactId>
-  <version>1.0.0</version>
+    <groupId>com.github.chenmingq</groupId>
+    <artifactId>chenmq-excel</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
